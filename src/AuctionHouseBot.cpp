@@ -184,21 +184,21 @@ void AuctionHouseBot::populateItemClassSeedList()
     // Determine how many of what kinds of items to use based on a seeded weight list, 0 = none
 
     // TODO: Move these weight items to a config
-    uint32 itemClassSeedWeightConsumable = 2;
-    uint32 itemClassSeedWeightContainer = 2;
-    uint32 itemClassSeedWeightWeapon = 6;
-    uint32 itemClassSeedWeightGem = 2;
-    uint32 itemClassSeedWeightArmor = 6;
-    uint32 itemClassSeedWeightReagent = 1;
-    uint32 itemClassSeedWeightProjectile = 2;
+    uint32 itemClassSeedWeightConsumable = 0;
+    uint32 itemClassSeedWeightContainer = 0;
+    uint32 itemClassSeedWeightWeapon = 0;
+    uint32 itemClassSeedWeightGem = 5;
+    uint32 itemClassSeedWeightArmor = 0;
+    uint32 itemClassSeedWeightReagent = 0;
+    uint32 itemClassSeedWeightProjectile = 0;
     uint32 itemClassSeedWeightTradeGoods = 22;
-    uint32 itemClassSeedWeightGeneric = 1;
-    uint32 itemClassSeedWeightRecipe = 3;
-    uint32 itemClassSeedWeightQuiver = 1;
-    uint32 itemClassSeedWeightQuest = 2;
-    uint32 itemClassSeedWeightKey = 1;
+    uint32 itemClassSeedWeightGeneric = 0;
+    uint32 itemClassSeedWeightRecipe = 0;
+    uint32 itemClassSeedWeightQuiver = 0;
+    uint32 itemClassSeedWeightQuest = 0;
+    uint32 itemClassSeedWeightKey = 0;
     uint32 itemClassSeedWeightMisc = 0;
-    uint32 itemClassSeedWeightGlyph = 2;
+    uint32 itemClassSeedWeightGlyph = 0;
 
     // Clear old list
     itemCandidateClassWeightedSeedList.clear();
@@ -290,7 +290,7 @@ void AuctionHouseBot::populateItemCandidateList()
         }
 
         // Restrict quality to anything under 7 (artifact and below) or above poor
-        if (itr->second.Quality == 0 || itr->second.Quality > 6)
+        if (itr->second.Quality == 0 || itr->second.Quality > 2)
             continue;
 
         // Disable conjured items
